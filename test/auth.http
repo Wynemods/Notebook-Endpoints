@@ -1,0 +1,30 @@
+### Register a new user
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "username": "Alexmods",
+  "password": "2534"
+}
+
+### Login with valid credentials
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "username": "Alexmods",
+  "password": "2534"
+}
+
+### Login with invalid credentials
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "username": "wronguser",
+  "password": "wrongpass"
+}
+
+### Access protected route with token (replace TOKEN_HERE with actual token)
+GET http://localhost:3000/protected-route
+Authorization: QWxleG1vZHM6MTc1MDY3NzQwMTU1OQ==
